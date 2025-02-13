@@ -1,26 +1,8 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Título de la Aplicación')</title>
-    <!-- Aquí se pueden incluir enlaces CSS comunes (Bootstrap, estilos propios, etc.) -->
-</head>
-<body>
-    <!-- Navbar genérico -->
-    <nav>
-        <ul>
-            <li><a href="{{ url('/') }}">Inicio</a></li>
-            <li><a href="{{ url('/quienes-somos') }}">Quiénes Somos</a></li>
-            <li><a href="{{ url('/test') }}">Test</a></li>
-        </ul>
-    </nav>
+@extends('layouts.app')
 
-    <!-- Contenedor principal para visualizar el contenido específico de cada vista -->
-    <div class="container">
-        @yield('content')
+@section('content')
+    <div>
+        <h1>Bienvenido a la Aplicación</h1>
+        <p>Esta es la página de bienvenida.</p>
     </div>
-
-    <!-- Scripts comunes (por ejemplo, jQuery, Bootstrap JS) -->
-</body>
-</html>
+@endsection
