@@ -4,23 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Título de la Aplicación')</title>
-    <!-- Aquí se pueden incluir enlaces CSS comunes (Bootstrap, estilos propios, etc.) -->
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS (se carga después para prevalecer sobre Bootstrap) -->
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 </head>
 <body>
-    <!-- Navbar genérico -->
-    <nav>
-        <ul>
-            <li><a href="{{ url('/') }}">Inicio</a></li>
-            <li><a href="{{ url('/quienes-somos') }}">Quiénes Somos</a></li>
-            <li><a href="{{ url('/test') }}">Test</a></li>
-        </ul>
-    </nav>
+    @include('partials.navbar')
 
-    <!-- Contenedor principal para visualizar el contenido específico de cada vista -->
     <div class="container">
         @yield('content')
     </div>
 
-    <!-- Scripts comunes (por ejemplo, jQuery, Bootstrap JS) -->
+    @include('partials.footer')
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
