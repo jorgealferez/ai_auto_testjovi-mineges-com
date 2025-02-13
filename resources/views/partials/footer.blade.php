@@ -1,18 +1,30 @@
-<footer>
-    <div class="container">
-        <div class="footer-column">
-            <ul>
-                <li><a href="#">Enlace 1</a></li>
-                <li><a href="#">Enlace 2</a></li>
-                <li><a href="#">Enlace 3</a></li>
-            </ul>
-        </div>
-        <div class="footer-column">
-            <ul>
-                <li><a href="#">Enlace 4</a></li>
-                <li><a href="#">Enlace 5</a></li>
-                <li><a href="#">Enlace 6</a></li>
-            </ul>
-        </div>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@yield('title', 'Laravel App')</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+    
+    @yield('styles')
+</head>
+<body>
+    @include('partials.navbar')
+
+    <div class="container mt-4">
+        @yield('content')
     </div>
-</footer>
+
+    @include('partials.footer')
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    @yield('scripts')
+</body>
+</html>
