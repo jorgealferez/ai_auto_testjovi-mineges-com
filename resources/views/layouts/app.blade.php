@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Título de la Aplicación')</title>
-    <!-- Aquí se pueden incluir enlaces CSS comunes (Bootstrap, estilos propios, etc.) -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-XXXXXXXXXX" crossorigin="anonymous">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
-    <!-- Navbar genérico -->
-    <nav>
-        <ul>
-            <li><a href="{{ url('/') }}">Inicio</a></li>
-            <li><a href="{{ url('/quienes-somos') }}">Quiénes Somos</a></li>
-            <li><a href="{{ url('/test') }}">Test</a></li>
-        </ul>
-    </nav>
-
-    <!-- Contenedor principal para visualizar el contenido específico de cada vista -->
-    <div class="container">
+    <div id="app">
         @yield('content')
     </div>
 
-    <!-- Scripts comunes (por ejemplo, jQuery, Bootstrap JS) -->
+    <!-- Application Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-YYYYYYYYYY" crossorigin="anonymous"></script>
 </body>
 </html>
