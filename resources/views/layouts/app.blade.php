@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="es">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', 'Mi Aplicación')</title>
-    <!-- Bootstrap CSS Integration via CDN -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@yield('title', 'Mi Proyecto')</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS (loaded after Bootstrap to allow overrides) -->
-    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
-    @yield('styles')
+    <!-- Custom Styles -->
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+    @stack('styles')
 </head>
 <body>
     @include('partials.navbar')
@@ -19,8 +19,8 @@
 
     @include('partials.footer')
 
-    <!-- Bootstrap JS Bundle with Popper -->
+    <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    @yield('scripts')
+    @stack('scripts')
 </body>
 </html>
