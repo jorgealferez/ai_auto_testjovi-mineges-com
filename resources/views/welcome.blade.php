@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -8,5 +9,6 @@
 <body>
     <h1>Bienvenido a la aplicación</h1>
     <a href="{{ route('categories.index') }}">Gestionar Categorías</a>
+
 </body>
 </html>
